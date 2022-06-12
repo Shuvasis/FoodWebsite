@@ -64,6 +64,13 @@ table tr td{
 .btn-danger:hover{
     background-color: #ff4757;
 }
+/* css for changing message color in manage eployee page */
+.success{
+    color: #2ed573;
+}
+.error{
+    color:#ff4757;
+}
 
 /* css for add-admin */
 
@@ -95,6 +102,7 @@ form .table_thirty{
 .main-content{
    padding:3%  0;
     background-color: #f1f2f6;
+    height:60%;
 }
 
 .col-4{
