@@ -4,9 +4,10 @@
         <link rel="stylesheet" href="../css/admin.css">
     </head>
     <body>
-        <?php include('partials/menu.php') ?>
+        <?php include('partials/menu.php'); ?>
 
             <div class="main-content">
+                <!-- add category -->
                 <div class="wrapper">
                     <h1>Add Category</h1>
                     <br><br>
@@ -16,12 +17,18 @@
                             echo $_SESSION['add'];
                             unset($_SESSION['add']);
                         }
+
+                        if(isset($_SESSION['upload']))
+                        {
+                            echo $_SESSION['upload'];
+                            unset($_SESSION['upload']);
+                        }
                     ?>
                     <br><br>
 
                     <!-- Add category form starts -->
                     <form action="" method="POST" enctype="multipart/form-data">
-                        <table class="tb1-30">
+                        <table class="tbl-30">
                             <tr>
                                 <td>Title: </td>
                                 <td>
@@ -35,10 +42,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Fetured: </td>
+                                <td>Featured: </td>
                                 <td>
-                                    <input type="radio" name="fetured" value="Yes">Yes
-                                    <input type="radio" name="fetured" value="No">No
+                                    <input type="radio" name="featured" value="Yes">Yes
+                                    <input type="radio" name="featured" value="No">No
                                 </td>
                             </tr>
                             <tr>
@@ -64,62 +71,89 @@
                             
                             //1st get the value from categroy form
                             $title = $_POST['title'];
-                        }
+                            
+                            // for radio button clicked or not or get the value
+                            if(isset($_POST['featured']))
+                            {
+                                $featured = $_POST['featured'];
+                            }
+                            else
+                            {
+                                $featured = "No";
+                            }
 
-                        // for radio button clicked or not or get the value
-                        if(isset($_POST['fetured']))
-                        {
-                            $fetured = $_POST['fetured'];
-                        }
-                        else
-                        {
-                            $fetured = "No";
-                        }
+                            if(isset($_POST['active']))
+                            {
+                                $active = $_POST['active'];
+                            }
+                            else
+                            {
+                                $active = "No";
+                            }
 
-                        if(isset($_POST['active']))
-                        {
-                            $active = $_POST['active'];
-                        }
-                        else
-                        {
-                            $active = "No";
-                        }
+                            //Check weather image selected or not and set the value of image name
+                            // print_r($_FILES['image']);
+                            // die();
 
-                        //Check weather image selected or not and set the value of image name
-                        print_r($_FILES['image']);
-                        die();
+                            if(isset($_FILES['image']['name']))
+                            {
+                                $image_name = $_FILES['image']['name'];
 
-                        //Create SQL Quary to Insert Category into database
+                                if($image_name != "") {
+                                    
+                                    $ext = end(explode('.', $image_name));
+                                    $image_name = "Food_Category_".rand(000, 999).'.'.$ext;
+                                    $sourece_path = $_FILES['image']['tmp_name'];
+                                    $destination_path = "../images/category/".$image_name;
 
-                        $sql = "INSERT INTO category SET 
-                        title = $title,
-                        fetured = $fetured,
-                        active = $active";
+                                    $upload = move_uploaded_file($sourece_path, $destination_path);
+                                    if($upload==false)
+                                    {
+                                        $_SESSION['upload'] = "<div class='error'>Failed to upload image </div>";
+                                        header('location:'.SITEURL.'admin/add-category.php');
+                                        die();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                $image_name = "";
+                            }
 
-                        //Execute the quary and save in database
-                        $res = mysqli_query($conn, $sql);
-                        
-                        //Check weather the quary excuted or not add data added or not
-                        if($res==true)
-                        {
-                            //Quary executed
-                            $_SESSION['add'] = '<div class="success">Category added successful</div>';
+                            //Create SQL Quary to Insert Category into database
 
-                            //Redirect too manage category page
-                            header('location: admin/manage-category.php');
-                        }
-                        else
-                        {
-                            //Failed too Add Category
-                            $_SESSION['add'] = '<div class="error">Category added failed</div>';
+                            $sql = "INSERT INTO category SET 
+                            title = '$title',
+                            image_name = '$image_name',
+                            featured = '$featured',
+                            active = '$active'
+                            ";
 
-                            //Redirect too manage category page
-                            header('location: admin/add-category.php');
-                        }
+                            //Execute the quary and save in database
+                            $res = mysqli_query($conn, $sql);
+                            
+                            //Check weather the quary excuted or not add data added or not
+                            if($res==true)
+                            {
+                                //Quary executed
+                                $_SESSION['add'] = '<div class="success">Category added successful</div>';
+
+                                //Redirect too manage category page
+                                header('location:'.SITEURL.'admin/manage-category.php');
+                            }
+                            else
+                            {
+                                //Failed too Add Category
+                                $_SESSION['add'] = '<div class="error">Category added failed</div>';
+
+                                //Redirect too manage category page
+                                header('location:'.SITEURL.'admin/add-category.php');
+                            }
+                        }   
                     ?>
                 </div>
             </div>
 
-        <?php include('partials/footer.php') ?>        
+        <?php include('partials/footer.php'); ?>        
     </body>
 </html>
