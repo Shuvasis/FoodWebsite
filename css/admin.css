@@ -65,6 +65,12 @@ table tr td{
     background-color: #ff4757;
 }
 
+/* css for add-admin */
+
+form .table_thirty{
+    width: 30%;
+}
+
 /* css for menu */
 .menu{
     text-align: center;
