@@ -11,7 +11,15 @@
         <div class="wrapper">
                <h1>MANAGE CATEGORY</h1>
                <br/><br/>
-               <a href="#" class="btn-primary">Add Category</a>
+               <?php
+                    if(isset($_SESSION['add']))
+                    {
+                        echo $_SESSION['add'];
+                        unset($_SESSION['add']);
+                    }    
+                ?>
+                <br><br>
+               <a href="add-category.php" class="btn-primary">Add Category</a>
                <br/><br/><br/>
 
                 <table class="tbl-full">
@@ -26,8 +34,8 @@
                         <td>xyz</td>
                         <td>xyz name</td>
                         <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
+                            <a href="#" class="btn-secondary">Update Category</a>
+                            <a href="#" class="btn-danger">Delete Category</a>
                         </td>
                     </tr>
 
@@ -36,8 +44,8 @@
                         <td>xyz</td>
                         <td>xyz name</td>
                         <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
+                            <a href="#" class="btn-secondary">Update Category</a>
+                            <a href="#" class="btn-danger">Delete Category</a>
                         </td>
                     </tr>
 
@@ -46,8 +54,8 @@
                         <td>xyz</td>
                         <td>xyz name</td>
                         <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
+                            <a href="#" class="btn-secondary">Update Category</a>
+                            <a href="#" class="btn-danger">Delete Category</a>
                         </td>
                     </tr>
                 </table>
@@ -56,3 +64,5 @@
         </div>
         <!-- main contain section end -->
         <?php include('partials/footer.php');?>
+    </body>
+</html>
