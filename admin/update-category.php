@@ -117,24 +117,25 @@
                                             header('location:'.SITEURL.'admin/manage-category.php');
                                             die();
                                         }
+
+                                        //B. Remove current image if availabele 
+                                        if($current_image != "") {
+                                            $remove_path = "../images/category/".$current_image;
+                                            $remove = unlink($remove_path);
+
+                                            //Check weather the image is removed or not
+                                            //If fail to remove then display message and stop the process
+
+                                            if($remove==false) {
+                                                //Fail to remove image
+                                                $_SESSION['failed-remove'] = '<div class="error">Failed to remove current image</div>';
+                                                header('location:'.SITEURL.'admin/manage-category.php');
+                                                die();
+                                            }
+                                        }
                                     } else {
                                         $image_name = $current_image;
-                                    }
-                                    //B. Remove current image if availabele 
-                                    if($current_image != "") {
-                                        $remove_path = "../images/category/".$current_image;
-                                        $remove = unlink($remove_path);
-
-                                        //Check weather the image is removed or not
-                                        //If fail to remove then display message and stop the process
-
-                                        if($remove==false) {
-                                            //Fail to remove image
-                                            $_SESSION['failed-remove'] = '<div class="error">Failed to temove current image</div>';
-                                            header('location:'.SITEURL.'admin/manage-category.php');
-                                            die();
-                                        }
-                                    }   
+                                    }    
                                 } else {
                                     $image_name = $current_image;
                                 }
