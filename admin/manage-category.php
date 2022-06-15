@@ -130,5 +130,5 @@
         </div>
         <!-- main contain section end -->
         <?php include('partials/footer.php');?>
-    </body>
-</html>
+    <!-- </body>
+</html> -->
