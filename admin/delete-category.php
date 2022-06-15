@@ -18,6 +18,16 @@
                 die();
             }
         }
+        // $path = "../images/category/".$image_name;
+        // if(file_exists($path)) {
+        //     unlink($path);
+        //     echo "Delete image successful";
+        // } else {
+        //     // echo 'Could not delete file does not exist';
+        //     $_SESSION['remove']= "<div class='error'>Failed to Remove</div>";
+        //     header('location:'.SITEURL.'admin/manage-category.php');
+        //     die();
+        // }
 
         $sql = "DELETE FROM category WHERE id = $id";
         $res = mysqli_query($conn, $sql);
