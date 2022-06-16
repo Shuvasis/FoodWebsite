@@ -1,3 +1,4 @@
+<?php include('../config/constants.php');?>
 <html>
     <head>
         <title>Add category</title>
@@ -67,7 +68,7 @@
                         // whether the submit button clicked or not
                         if(isset($_POST['submit']))
                         {
-                            // echo "Clicked";
+                            
                             
                             //1st get the value from categroy form
                             $title = $_POST['title'];
@@ -92,9 +93,7 @@
                             }
 
                             //Check weather image selected or not and set the value of image name
-                            // print_r($_FILES['image']);
-                            // die();
-
+                           
                             if(isset($_FILES['image']['name']))
                             {
                                 $image_name = $_FILES['image']['name'];

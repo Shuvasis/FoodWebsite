@@ -1,3 +1,4 @@
+<?php include('../config/constants.php');?>
 <html>
     <head>
         <title>Delete Category</title>
@@ -38,7 +39,7 @@
                     ?>
 
                         <form action="" method="POST" enctype="multipart/form-data">
-                            <table class="tbl-30">
+                            <table class="table_thirty">
                                 <tr>
                                     <td>Title: </td>
                                     <td>
