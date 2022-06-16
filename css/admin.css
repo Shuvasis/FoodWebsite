@@ -6,8 +6,7 @@
 
 .main-content{
     padding: 3% 0;
-    
-     height: auto;
+    min-height:80vh;
      
  }.wrapper{
   
@@ -85,6 +84,7 @@ table tr td{
 form .table_thirty{
     width: 30%;
 }
+
 
 /* css for menu */
 .menu{

@@ -1,4 +1,4 @@
-<?php include('../config/constants.php');?>
+
 
 
         <!-- Menu section start -->
