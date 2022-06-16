@@ -4,7 +4,7 @@
     <section class="food-search text-center">
         <div class="container">
             
-            <form action="food-search.html" method="POST">
+            <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
@@ -21,7 +21,7 @@
             <?php
                 //Create SQL query to display Category from Database
 
-                $sql = "SELECT * FROM category WHERE active='Yes' AND featured='Yes'";
+                $sql = "SELECT * FROM category WHERE active='Yes' AND featured='Yes' LIMIT 3";
                 
                 //Execute the query
                 $res = mysqli_query($conn, $sql);
