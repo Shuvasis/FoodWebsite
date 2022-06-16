@@ -1,23 +1,95 @@
+<?php
+                    include('../config/constants.php');
+                    if(isset($_POST['submit']))
+                    {
+                        $title=$_POST['title'];
+                        $description=$_POST['description'];
+                        $price=$_POST['price'];
+                        $category=$_POST['category'];
+                        
+
+                        if(isset($_POST['featured'])){
+                            $featured=$_POST['featured'];
+                        }
+                        else{
+                            $featured="No";
+                        }
+                    
+
+                    if(isset($_POST['active'])){
+                        $active=$_POST['active'];
+                    }
+                    else{
+                        $active="No";
+                    }
+
+                    if(isset($_FILES['image']['name']))
+                    {
+                        $image_name = $_FILES['image']['name'];
+
+                        if($image_name != "")
+                        {
+                           
+                            $src = $_FILES['image']['tmp_name'];
+                            echo $src."<br>";
+                            $dst="../images/food/".$image_name;
+                            echo $dst."<br>";
+                            $upload = move_uploaded_file($src,$dst);
+                            if($upload==false)
+                            {
+                                $_SESSION['upload'] = "<div class='error'>Faield to upload Image .</div>";
+                                header('location:add-food.php');
+                                // die();
+                            }
+
+                        }
+                    }
+                       
+                    else
+                     {
+                        $image_name = "";
+                    }
+                   
+
+                    $sql2="INSERT INTO food
+                    VALUES ('','$title','$description','$price','$image_name','$category','$featured','$active')";
+                    $res2= mysqli_query($conn, $sql2);
+                    if($res2 == true)
+                    {
+                        $_SESSION['foodadd']= '<div class="success">Food Added successful.</div>';
+                        header('location:manage-food.php');
+                        
+                     }
+                    else{
+                        $_SESSION['foodadd']= '<div class="error">Faield to Add Food.</div>';
+                        header('location:manage-food.php');
+
+                    }
+                }
+                ?>
+
 <html>
     <head>
        <title> Add food </title>
        <link rel="stylesheet" href="../css/admin.css">
     </head>   
     <body>
-        <?php include('partials/menu.php'); ?>
+    <?php include('partials/menu.php'); ?>
         <div class="main-content">
             <div class="wrapper">
                 <h1>Add Food</h1>
                 <br /><br/>
 
                 <?php
+                
                 if(isset($_SESSION['upload'])){
                     echo $_SESSION['upload'];
-                    unset($_SESSION['upload']);
-                }
+                    unset($_SESSION['upload']);}
+                
+
                  ?>
 
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="add-food.php" method="POST" enctype="multipart/form-data">
                     <table class="table_thirty">
                         <tr>
                             <td>Title: </td>
@@ -62,29 +134,26 @@
                                                 $title = $row['title'];
                                                 ?>
                                                     <option value="<?php echo $id; ?>"> <?php echo $title; ?></option>
+
                                                 <?php
                                             }
-
-                                        }
+                                         }
                                         else{
+
                                             ?>
-                                            <option value="1">No Category Found</option>
-
-                                            <?php 
+                                            <option value='0'>No Category Found</option>";
+                                        <?php
                                         }
-
-                                     ?>
-
-                                    
-                                </select>
-                            </td>
+                                        ?>
+                                        </select>
+                                    </td>
                         </tr>
 
                         <tr>
                             <td>Featured: </td>
                             <td>
-                                <input type="radio" value="yes" name="festured" >Yes
-                                <input type="radio" value="no" name="festured" >No
+                                <input type="radio" value="yes" name="featured" >Yes
+                                <input type="radio" value="no" name="featured" >No
                             </td>
                         </tr>
 
@@ -103,83 +172,10 @@
                             </td>
                         </tr>
                     </table>
-
                 </form>
                 
                 <!-- add data into db -->
-                <?php
-                    if(isset($_POST['submit'])){
-                        $title=$_POST['title'];
-                        $description=$_POST['description'];
-                        $price=$_POST['price'];
-                        $category=$_POST['category'];
-                        
-
-                        if(isset($_POST['featured'])){
-                            $featured=$_POST['featured'];
-                        }
-                        else{
-                            $featured="No";
-                        }
-                    
-
-                    if(isset($_POST['active'])){
-                        $active=$_POST['active'];
-                    }
-                    else{
-                        $active="No";
-                    }
-
-                    if(isset($_FILES['image']['name']))
-                    {
-                        $image_name=$_FILES['image']['name'];
-
-                        if($image_name != "")
-                        {
-                            $ext = end(explode('.', $image_name));
-                            $image_name = "Food-Name".rand(0000,9999).".".$ext;
-                            $src = $_FILES['image']['tmp_name'];
-                            $dst="../images/food/".$image_name;
-                            $upload = move_uploaded_file($src,$dst);
-                            if($upload==false)
-                            {
-                                $_SESSION['upload'] = "<div class='error'>Faield to upload Image .</div>";
-                                header('location:'.SITEURL.'admin/add-food.php');
-                                die();
-                            }
-
-                        }
-                    }
-                       
-                    else
-                     {
-                        $image_name = "";
-                    }
-                    $sql2="INSERT INTO food SET
-                        title= '$title',
-                        description= '$description',
-                        price= $price,
-                        image_name= '$image_name',
-                        category_id= $category,
-                        featured='$featured',
-                        active= '$active'
-
-                    ";
-                    $res2= mysqli_query($conn, $sql2);
-                    if($res2==true){
-                        $_SESSION['add']= '<div class="success">Food Added successful.</div>';
-                        header('location:'.SITEURL.'admin/manage-food.php');
-
-                    }
-                    else{
-                        $_SESSION['add']= '<div class="error">Faield to Add Food.</div>';
-                        header('location:'.SITEURL.'admin/manage-food.php');
-
-
-                    }
-
-                }
-                 ?>
+                
             </div>
         </div>    
 
