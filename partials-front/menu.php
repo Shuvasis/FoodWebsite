@@ -18,7 +18,7 @@
 <body>
 
     <!-- Navbar Section Starts Here -->
-    <section class="navbar">
+    <section class="navbar" >
         <div class="container">
             <div class="logo">
                 <a href="#" title="Logo">

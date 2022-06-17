@@ -3,6 +3,7 @@
     <head>
         <title>Manage Category </title>
         <link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
 
@@ -11,7 +12,7 @@
          <div class="main-content">
         <div class="wrapper">
                <h1>MANAGE CATEGORY</h1>
-               <br/><br/>
+              <br>
                 <?php
                     if(isset($_SESSION['add']))
                     {
@@ -56,8 +57,8 @@
                     }
                 ?>
                 <br><br>
-               <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn-primary">Add Category</a>
-               <br/><br/><br/>
+               <a href="<?php echo SITEURL; ?>admin/add-category.php" class="add_category" >Add Category</a>
+              
 
                 <table class="tbl-full">
                     <tr>
@@ -107,8 +108,8 @@
                                         <td><?php echo $featured; ?></td>
                                         <td><?php echo $active; ?></td>
                                         <td>
-                                            <a href="<?php echo SITEURL; ?>/admin/update-category.php?id=<?php echo $id; ?>" class="btn-secondary">Update Category</a>
-                                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
+                                            <a href="<?php echo SITEURL; ?>/admin/update-category.php?id=<?php echo $id; ?>" style="color:blue"><i class="fa-solid fa-pen-to-square fa-2x"></i></a>
+                                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" style="color:red"><i class="fa-solid fa-trash-can fa-2x"></i></a>
                                         </td>
                                     </tr>
 

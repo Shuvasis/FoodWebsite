@@ -12,7 +12,7 @@
         <div class="main-content">
             <div class="wrapper">
                <h1>MANAGE FOOD</h1>
-               <br/><br/>
+               <br/>
                <?php
                     if(isset($_SESSION['foodadd']))
                     {
@@ -50,9 +50,9 @@
                     }
 
             ?>
-               <br /><br/>
-               <a href="<?php echo SITEURL; ?>admin/add-food.php" class="btn-primary">Add Food</a>
-               <br/><br/><br/>
+               <br />
+               <a href="<?php echo SITEURL; ?>admin/add-food.php" class="add_category">Add Food</a>
+               <br/>
                 <table class="tbl-full">
                     <tr>
                         <th>Sl.No</th>
@@ -100,8 +100,8 @@
                                     <td><?php echo $featured; ?></td>
                                     <td><?php echo $active; ?></td>
                                     <td>
-                                    <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id; ?>" ><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" ><i class="fa-solid fa-trash-can"></i></a>
+                                    <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id; ?>" style="color:blue"><i class="fa-solid fa-pen-to-square fa-2x"></i></a>
+                                    <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" style="color:red"><i class="fa-solid fa-trash-can fa-2x"></i></a>
                                     </td>
                                 </tr>
                                 <?php

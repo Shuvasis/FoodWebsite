@@ -31,9 +31,9 @@
                         {
                            
                             $src = $_FILES['image']['tmp_name'];
-                            echo $src."<br>";
+                            // echo $src."<br>";
                             $dst="../images/food/".$image_name;
-                            echo $dst."<br>";
+                            // echo $dst."<br>";
                             $upload = move_uploaded_file($src,$dst);
                             if($upload==false)
                             {
@@ -78,7 +78,7 @@
         <div class="main-content">
             <div class="wrapper">
                 <h1>Add Food</h1>
-                <br /><br/>
+                <br />
 
                 <?php
                 

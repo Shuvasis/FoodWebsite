@@ -34,7 +34,7 @@
 
                                             if($remove==false){
                                                 $_SESSION['failed-remove'] = "<div class='error'>Faield to remove current image</div>";
-                                                header('location:'.SITEURL.'admin/manage-food.php');
+                                                header('location:manage-food.php');
                                                 die("no remove");
                                             }
                                         }
