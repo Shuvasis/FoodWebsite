@@ -28,14 +28,14 @@
 
                         ?>
 
-                            <a href="category-foods.php">
-                                <div class="box-3 float-container">
+                            <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>">
+                                <div class="box-3 float-container img-curve">
                                     <?php
                                     if($image_name == "") {
                                         echo "<div class='error'>Image not available</div>";
                                     } else {
                                         ?>
-                                        <img src="<?php echo SITEURL; ?>/images/category/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive img-curve">
+                                        <img src="<?php echo SITEURL; ?>/images/category/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive">
                                         <?php
                                     }
                                     ?>
