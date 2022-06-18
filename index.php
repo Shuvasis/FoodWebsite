@@ -13,6 +13,13 @@
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
+    <?php
+        if(isset($_SESSION['order'])) {
+            echo $_SESSION['order'];
+            unset($_SESSION['order']);
+        }
+    ?>
+
     <!-- CAtegories Section Starts Here -->
     <section class="categories">
         <div class="container">
@@ -38,14 +45,14 @@
                         $image_name = $row['image_name'];
                         ?>
 
-                            <a href="category-foods.html">
-                                <div class="box-3 float-container">
+                            <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>">
+                                <div class="box-3 float-container img-curve" data-aos="fade-up">
                                     <?php
                                         if($image_name == "") {
                                             echo "<div class='error'>Image not available</div>";
                                         } else {
                                             ?>
-                                            <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive img-curve">
+                                            <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="<?php echo $title; ?>" class="img-responsive ">
                                             <?php
                                         }
                                     ?>
@@ -82,6 +89,7 @@
                 $count2 = mysqli_num_rows($res2);
 
                 if($count2 > 0){
+                    $i = 1;
                     while($row2 = mysqli_fetch_assoc($res2)) {
                         $id2 = $row2['id'];
                         $title2 = $row2['title'];
@@ -89,32 +97,42 @@
                         $description = $row2['description'];
                         $image_name2 = $row2['image_name'];
                         // $featured = $row2['featured'];
+                        if($i%2==0) {
+                            ?>
+                                <div class="food-menu-box" data-aos="fade-left">
+                            <?php
+                        } else {
+                            ?>
+                                <div class="food-menu-box" data-aos="fade-right">
+                            <?php
+                        }
                         ?>
-                        <div class="food-menu-box">
+                        
                             <div class="food-menu-img">
                                 <?php
                                 if($image_name2 == "") {
                                     echo '<div class="error">Image not available</div>';
                                 } else {
                                     ?>
-                                    <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name2; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                    <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name2; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve fixed">
                                     <?php
                                 }
                                 ?>
                             </div>
 
-                            <div class="food-menu-desc">
-                                <h4><?php echo $title2; ?></h4>
-                                <p class="food-price"><?php echo $price; ?></p>
-                                <p class="food-detail">
+                            <div class="food-menu-desc" >
+                                <h4 style="font-size: 30px;"><?php echo $title2; ?></h4>
+                                <p class="food-price">₹<?php echo $price; ?></p>
+                                <p class="food-detail text-truncate">
                                 <?php echo $description; ?>
                                 </p>
                                 <br>
 
-                                <a href="order.html" class="btn btn-primary">Order Now</a>
+                                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id2; ?>" class="btn btn-primary">Order Now</a>
                             </div>
                         </div>
                         <?php
+                        $i++;
                     }
                 } else {
                     echo '<div class="error">Food not available</div>';
@@ -127,10 +145,22 @@
 
         </div>
 
-        <p class="text-center">
+        <!-- <p class="text-center">
             <a href="#">See All Foods</a>
-        </p>
+        </p> -->
     </section>
     <!-- fOOD MEnu Section Ends Here -->
 
+
+
     <?php include('partials-front/footer.php'); ?>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+    	offset: 150,
+    	delay: 100,
+    	duration: 1000
+    });
+  </script>
