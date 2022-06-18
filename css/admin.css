@@ -2,15 +2,19 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    
+}
+body{
+    background-color: #eeede7ae;
 }
 
 .main-content{
     padding: 3% 0;
-    min-height:80vh;
+    min-height:63vh;
      
- }.wrapper{
-  
-    padding: 1%;
+ }
+ .wrapper{
+   padding: 1%;
     width: 80%;
     margin: 0 auto;
 }
@@ -49,12 +53,13 @@ table tr td{
 }
 
 .btn-secondary{
-    background-color:#7bed9f;
-    padding: 2% 4%;
+    /* background-color:#7bed9f; */
+    padding: 10px 20px!important;
     color: black;
     text-decoration: none;
     font-weight: bold;
     border: none;
+    box-shadow: rgba(23, 230, 133, 0.25) 0px 30px 60px -12px inset, rgb(23, 230, 133) 0px 18px 36px -18px inset;
 }
 .btn-secondary:hover{
     background-color: #2ed573;
@@ -82,33 +87,24 @@ table tr td{
 /* css for add-admin */
 
 form .table_thirty{
-    width: 30%;
+    width: 45%;
+    /* border: 1px solid black; */
+    
 }
-
-
-/* css for menu */
-.menu{
-    text-align: center;
-    border-bottom: 2px solid rgb(201, 201, 201);
-}
-.menu ul{
-    list-style-type: none;
-}
-.menu ul li{
-    display: inline;
+form .table_thirty tr td input{
     padding: 1%;
+    outline: none;
 }
-.menu ul li a{
-    text-decoration: none;
-    font-weight: bold;
-    color: #ff6b81;
-}
-.menu ul li a :hover{
-    color: #ff4757;
-}
-/* css for main content */
 
+form .table_thirty tr td textarea{
+    padding: 1%;
+    outline: none;
 
+}
+form .table_thirty tr td select{
+    padding: 1%;
+    outline: none;
+}
 .col-4{
     width:18%;
     background-color: white;
@@ -120,10 +116,77 @@ form .table_thirty{
 /* css for footer */
 .footer{
  
-    background-color:#ff4757;
-    color: white;
+    background-color: white;
+    color: #ff4757;
+    padding: 10px ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-weight: bold;
 }
 
 .success{
     color: #2ed573;
+}
+.add_category{
+    position:absolute;
+    top: 150px;
+    right: 130px;
+   
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    /* padding: 0; */
+    box-shadow: rgba(23, 230, 133, 0.25) 0px 30px 60px -12px inset, rgb(23, 230, 133) 0px 18px 36px -18px inset;
+}
+.add_category:hover{
+    color:black;
+}
+.fa-solid{
+    padding:10px;
+}
+
+
+/* CSSS for navbar section */
+
+.logo{
+    width: 10%;
+    float: left;
+}
+.menu{
+    line-height: 60px;
+   
+}
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 1%;
+    font-weight: bold;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+    /* background-color:#47B4D1; */
+}
+.text-right{
+    text-align: right;
+}
+a{
+    color: #ff6b81;
+    text-decoration: none;
+}
+a:hover{
+    color: #ff4757;
+}
+.navbar{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.img-responsive{
+    height: 80px;
+    width: 80px;
 }

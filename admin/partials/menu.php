@@ -1,17 +1,26 @@
+<!-- Menu section start -->
+<section class="navbar" >
+        <div class="container">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="../images/newlogo.png" alt="Restaurant Logo" class="img-responsive">
+                    
+                </a>
+            </div>
 
-
-
-        <!-- Menu section start -->
-        <div class="menu">
-            <div class="wrapper">
-              <ul>
+            <div class="menu text-right">
+                <ul>
                 <li><a href="index.php">Home</a></li>
                 
                 <li><a href="manage-category.php">Category</a></li>
                 <li><a href="manage-food.php">Food</a></li>
                 <li><a href="manage-order.php">Order</a></li>
-              </ul>
+                </ul>
             </div>
-            
+
+            <div class="clearfix"></div>
         </div>
-         <!-- menu section end -->
+    </section>
+<!-- menu section end -->
+
+    

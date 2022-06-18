@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Food Order Website</title>
+        <link rel="icon" type="image/x-icon" href="../images/fevicon.ico">
         <link rel="stylesheet" href="../css/admin.css">
     </head>
     <body>
