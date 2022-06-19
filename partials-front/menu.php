@@ -41,6 +41,10 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <li><a href="user-login.php" class="logout">Log In</a></li>
+                    <li>
+                        <a href="user-logout.php" class="logout">Log out</a>
+                    </li>
                 </ul>
             </div>
 
