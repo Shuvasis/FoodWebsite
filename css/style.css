@@ -215,6 +215,22 @@ fieldset{
     font-weight: bold;
 }
 
+.logout{
+    color: #f4f4f4;
+    text-decoration: none;
+    border: 1px solid #ff6b81;
+    padding:1%;
+    border-radius:10px;
+    background-color:#ff6b81;
+
+}
+
+.logout:hover{
+    color: #ff6b81;
+    background-color: white;
+    border: 1px solid #ff6b81;
+}
+
 
 
 /* CSS for Mobile Size or Smaller Screen */
