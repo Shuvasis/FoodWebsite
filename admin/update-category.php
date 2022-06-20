@@ -71,6 +71,7 @@ include('../config/constants.php');
     <head>
         <title>Delete Category</title>
         <link rel="stylesheet" href="../css/admin.css">
+        <link rel="icon" type="image/x-icon" href="../images/fevicon.ico">
     </head>
     <body>
         <?php include('partials/menu.php');?>
