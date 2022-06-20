@@ -8,7 +8,7 @@
     if($password == $rpassword){
         $sqlquery=mysqli_query($conn,"UPDATE userdb SET password='$password' WHERE id='$id'");
         if($sqlquery){
-            header('location:user-login.php');
+            header('location:user-login.php?msg="password update successfully"');
            
         }
         else{

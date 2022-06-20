@@ -118,6 +118,10 @@ fieldset{
     padding: 1%;
     font-weight: bold;
 }
+.img-responsiveOne{
+    height: 80px!important;
+    width: 80px!important;
+}
 
 
 /* CSS for Food SEarch Section */
@@ -230,6 +234,8 @@ fieldset{
     background-color: white;
     border: 1px solid #ff6b81;
 }
+
+
 
 
 

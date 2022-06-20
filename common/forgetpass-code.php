@@ -3,11 +3,12 @@ include('../config/constants.php');
 include('../mail.php');
 if(isset($_POST['submit'])){
 	$email=$_POST['email'];
-	$id=$_POST['id'];
-	$passwordlink=md5($email.time());
-	
-	$semail=mysqli_query($conn,"SELECT * from userdb WHERE email='$email' and id='$id'");
+	// $id=$_POST['id'];
+	$semail=mysqli_query($conn,"SELECT * from userdb WHERE email='$email'");
 	$saemail=mysqli_num_rows($semail);
+	$row=mysqli_fetch_assoc($semail);
+	$passwordlink=md5($email.time());
+    $id=$row['userid'];
 	$sql=mysqli_query($conn,"INSERT INTO forgetpassword values('$id','$passwordlink')");
 	if($saemail!=0){
 		$to = "$email";

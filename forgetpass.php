@@ -15,7 +15,7 @@
             <form method="post" action="common/forgetpass-code.php">
            <div class="input_box">
                 <label>Please enter the Email ID you use for ragistration</label>
-               <input type="hidden" name="id">
+               <!-- <input type="hidden" name="id"> -->
                 <input placeholder="Enter your e Email ID" name="email" type="email" required>
             </div>
             <?php
