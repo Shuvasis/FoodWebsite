@@ -20,6 +20,33 @@
         }
     ?>
 
+    <?php
+        if(isset($_POST['submit1'])) {
+            $product_name = $_POST['title1'];
+            $product_image = $_POST['imageName'];
+            $product_price = $_POST['price1'];
+            $product_quentity = $_POST['quentity'];
+
+            //Write a sql query
+            $cartSql = "INSERT INTO `cart`(`product_name`, `product_image`, `product_quentity`, `product_price`)
+            VALUES 
+            (
+                '$product_name',
+                '$product_image',
+                $product_quentity,
+                $product_price
+            )";
+
+            //Execute sql
+            $cartRes = mysqli_query($conn, $cartSql);
+
+            //Redirect to cart page
+            header('location:'.SITEURL.'cart.php');
+        }
+        
+        
+    ?>
+
     <!-- CAtegories Section Starts Here -->
     <section class="categories">
         <div class="container">
@@ -99,10 +126,12 @@
                         // $featured = $row2['featured'];
                         if($i%2==0) {
                             ?>
+                            <form action="" method="POST" enctype="multipart/form-data">
                                 <div class="food-menu-box" data-aos="fade-left">
                             <?php
                         } else {
                             ?>
+                            <form action="" method="POST" enctype="multipart/form-data">
                                 <div class="food-menu-box" data-aos="fade-right">
                             <?php
                         }
@@ -115,6 +144,7 @@
                                 } else {
                                     ?>
                                     <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name2; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve fixed">
+                                    <input type="hidden" name="imageName" value="<?php echo $image_name2; ?>">
                                     <?php
                                 }
                                 ?>
@@ -122,15 +152,20 @@
 
                             <div class="food-menu-desc" >
                                 <h4 style="font-size: 30px;"><?php echo $title2; ?></h4>
+                                <input type="hidden" name="title1" value="<?php echo $title2; ?>">
                                 <p class="food-price">₹<?php echo $price; ?></p>
+                                <input type="hidden" name="price1" value="<?php echo $price; ?>">
                                 <p class="food-detail text-truncate">
                                 <?php echo $description; ?>
                                 </p>
                                 <br>
 
                                 <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id2; ?>" class="btn btn-primary">Order Now</a>
+                                <input type="number" class="quentityInput" name="quentity" min="1" max="100">
+                                <button type="submit" name="submit1" class="btn btn-primary">Add to Cart</button>
                             </div>
                         </div>
+                        </form>
                         <?php
                         $i++;
                     }
