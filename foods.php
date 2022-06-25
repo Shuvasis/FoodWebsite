@@ -33,6 +33,7 @@
 
             //Check food are avilable or not
             if($count > 0) {
+                $i = 1;
                 //Foods avilable
                 while($row = mysqli_fetch_assoc($res)) {
                     //Get the values
@@ -42,9 +43,19 @@
                     $price = $row['price'];
                     $image_name = $row['image_name'];
 
+                    if($i%2==0) {
+                        ?>
+                            <div class="food-menu-box" data-aos="fade-left">
+                        <?php
+                    } else {
+                        ?>
+                            <div class="food-menu-box" data-aos="fade-right">
+                        <?php
+                    }
+
                     ?>
                     
-                    <div class="food-menu-box">
+                    
                         <div class="food-menu-img">
                             <?php
                             if($image_name == "") {
@@ -60,7 +71,7 @@
                         <div class="food-menu-desc">
                             <h4><?php echo $title; ?></h4>
                             <p class="food-price">₹<?php echo $price; ?></p>
-                            <p class="food-detail">
+                            <p class="food-detail text-truncate">
                                 <?php echo $description; ?>
                             </p>
                             <br>
@@ -69,6 +80,7 @@
                         </div>
                     </div>
                     <?php
+                    $i++;
                 }
             } else {
                 //Foods not avilable
