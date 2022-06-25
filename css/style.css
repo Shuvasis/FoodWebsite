@@ -118,6 +118,10 @@ fieldset{
     padding: 1%;
     font-weight: bold;
 }
+.img-responsiveOne{
+    height: 80px!important;
+    width: 80px!important;
+}
 
 
 /* CSS for Food SEarch Section */
@@ -214,6 +218,24 @@ fieldset{
     margin-bottom: 1%; 
     font-weight: bold;
 }
+
+.logout{
+    color: #f4f4f4;
+    text-decoration: none;
+    border: 1px solid #ff6b81;
+    padding:1%;
+    border-radius:10px;
+    background-color:#ff6b81;
+
+}
+
+.logout:hover{
+    color: #ff6b81;
+    background-color: white;
+    border: 1px solid #ff6b81;
+}
+
+
 
 
 
