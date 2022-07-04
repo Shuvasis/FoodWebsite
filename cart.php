@@ -1,12 +1,19 @@
 <?php include('partials-front/menu.php'); ?>
 
 
+
 <!-- Section Start Here -->
 <section>
     <div class="main-contant">
         <div class="wrapper">
             <h1>Cart Page</h1>
-            <br>
+            <br><br>
+            <?php
+                if(isset($_SESSION['remove_cart'])) {
+                    echo $_SESSION['remove_cart'];
+                    unset($_SESSION['remove_cart']);
+                }
+            ?><br><br>
             <table class="cTable">
                 <tr>
                     <th>Serial No</th>
@@ -18,8 +25,9 @@
                 </tr>
 
                 <?php
+                    $user_email = $_SESSION['loginuser'];
                     //Create a sql query to display all cart items
-                    $sql = "SELECT * FROM cart";
+                    $sql = "SELECT * FROM cart WHERE user_email='$user_email'";
 
                     //Execute the query
                     $res = mysqli_query($conn, $sql);
@@ -54,7 +62,22 @@
                                     </td>
                                     <td><?php echo $product_quentity; ?></td>
                                     <td>₹<?php echo $product_price * $product_quentity; ?></td>
-                                    <td><button class="btn btn-primary">Remove</button></td>
+                                    <form action="" method="POST">
+                                        <input type="hidden" name="delete_id" value="<?php echo $product_id; ?>">
+                                        <td><button type="submit" name="submit" class="btn btn-primary">Remove</button></td>
+
+                                        <?php
+                                            if(isset($_POST['submit'])) {
+                                                $delete_product_id = $_POST['delete_id'];
+
+                                                $deleteSQL = "DELETE FROM cart WHERE product_id = $delete_product_id";
+                                                $deleteRES = mysqli_query($conn, $deleteSQL);
+                                                // echo '<div class="success">Item Remove successful</div>';
+                                                $_SESSION['remove_cart'] = "<div class='success'>Item Remove Successful</div>";
+                                                header('location:cart.php');
+                                            }
+                                        ?>
+                                    </form>
                                 </tr>
                             <?php
                         }

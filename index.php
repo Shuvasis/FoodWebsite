@@ -1,4 +1,4 @@
-<?php include('partials-front/menu.php') ?>
+<?php include('partials-front/menu.php'); ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
@@ -20,32 +20,7 @@
         }
     ?>
 
-    <?php
-        if(isset($_POST['submit1'])) {
-            $product_name = $_POST['title1'];
-            $product_image = $_POST['imageName'];
-            $product_price = $_POST['price1'];
-            $product_quentity = $_POST['quentity'];
-
-            //Write a sql query
-            $cartSql = "INSERT INTO `cart`(`product_name`, `product_image`, `product_quentity`, `product_price`)
-            VALUES 
-            (
-                '$product_name',
-                '$product_image',
-                $product_quentity,
-                $product_price
-            )";
-
-            //Execute sql
-            $cartRes = mysqli_query($conn, $cartSql);
-
-            //Redirect to cart page
-            header('location:'.SITEURL.'cart.php');
-        }
-        
-        
-    ?>
+    
 
     <!-- CAtegories Section Starts Here -->
     <section class="categories">
@@ -126,12 +101,12 @@
                         // $featured = $row2['featured'];
                         if($i%2==0) {
                             ?>
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="addtocart.php" method="POST" enctype="multipart/form-data">
                                 <div class="food-menu-box" data-aos="fade-left">
                             <?php
                         } else {
                             ?>
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="addtocart.php" method="POST" enctype="multipart/form-data">
                                 <div class="food-menu-box" data-aos="fade-right">
                             <?php
                         }
@@ -161,7 +136,8 @@
                                 <br>
 
                                 <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id2; ?>" class="btn btn-primary">Order Now</a>
-                                <input type="number" class="quentityInput" name="quentity" min="1" max="100">
+                                <!-- <input type="number" class="quentityInput" name="quentity" min="1" max="100"> -->
+                                <input type="hidden" name="food_id" value="<?php echo $id2; ?>">
                                 <button type="submit" name="submit1" class="btn btn-primary">Add to Cart</button>
                             </div>
                         </div>
