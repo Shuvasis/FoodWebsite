@@ -18,6 +18,11 @@
             echo $_SESSION['order'];
             unset($_SESSION['order']);
         }
+
+        if(isset($_SESSION['already-added'])) {
+            echo $_SESSION['already-added'];
+            unset($_SESSION['already-added']);
+        }
     ?>
 
     
