@@ -79,16 +79,16 @@
                                         <td>
                                             <?php 
                                                 if($status == "Ordered") {
-                                                    echo "<label style='color: violet;'>$status</label>";
+                                                    echo "<strong style='color: violet;'>$status</strong>";
                                                 }
                                                 elseif($status == "On-Delivery") {
-                                                    echo "<label style='color: orange;'>$status</label>";
+                                                    echo "<strong style='color: orange;'>$status</strong>";
                                                 }
                                                 elseif($status == "Delivered") {
-                                                    echo "<label style='color: green;'>$status</label>";
+                                                    echo "<strong style='color: green;'>$status</strong>";
                                                 }
                                                 elseif($status == "Cancelled") {
-                                                    echo "<label style='color: red;'>$status</label>";
+                                                    echo "<strong style='color: red;'>$status</strong>";
                                                 }
                                             ?>
                                         </td>

@@ -11,7 +11,7 @@
             $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE product_name = '$product_name' AND user_email = '$user_email'");
 
             if(mysqli_num_rows($select_cart) > 0) {
-                $_SESSION['already-added'] = '<div class="error">Product Already Added into Cart</div>';
+                $_SESSION['already-added'] = '<div style="text-align: center; color: red;">Product Already Added Into Cart</div>';
                 header('location:index.php');
             }
             else

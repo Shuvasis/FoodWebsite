@@ -13,6 +13,7 @@
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
+    <br><br>
     <?php
         if(isset($_SESSION['order'])) {
             echo $_SESSION['order'];
