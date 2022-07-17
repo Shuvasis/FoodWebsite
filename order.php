@@ -27,11 +27,11 @@
             } else {
                 //Food not avialable and redirect to home page
                 echo '<div class="error">Food is not avilable</div>';
-                header('location:'.SITEURL);
+                header('location:index.php');
             }
         } else {
             //Redirect to homepage
-            header('location:'.SITEURL);
+            header('location:index.php');
         }
     ?>
 
@@ -139,10 +139,10 @@
                     if($res2==true) {
                         
                         $_SESSION['order'] = '<div class="success">Food Order Successfull.</div>';
-                        header('location:'.SITEURL);
+                        header('location:index.php');
                     } else {
                         $_SESSION['order'] = '<div class="error">Failed to Order Food</div>';
-                        header('location:'.SITEURL);
+                        header('location:index.php');
                     }
                 }
             ?>
