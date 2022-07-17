@@ -34,36 +34,37 @@
                     echo "<div class='display-order'><span>your cart is empty!</span></div>";
                 }
                 ?>
-                <span class="grand-total"> Price : <?= $grand_total ; ?>/- </span>
+               <span class="grand-total"> Price : <?= $grand_total; ?>/- </span>
                 </div>
 
                 <div class="flex">
                 <h1 class="heading">BILLING ADDRESS</h1>
+                
                 <div class="subinputtype">
                     <div class="inputBox">
-                        <span>Name</span>
+                        <span>Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="enter your name" name="name" required>
                     </div>
                     <div class="inputBox">
-                        <span>Phone Number</span>
+                        <span>Phone Number</span>&nbsp;
                         <input type="number" placeholder="enter your number" name="number" required>
                     </div>
                     <div class="inputBox">
-                        <span>your Email</span>
+                        <span>your Email</span>&nbsp;
                         <input type="email" placeholder="enter your email" name="email" required>
                     </div>
                 </div>
                 <div class="subinputtype">
                     <div class="inputBox">
-                        <span>address line 1</span>
+                        <span>address line 1</span>&nbsp;
                         <input type="text" placeholder="e.g. flat no." name="flat" required>
                     </div>
                     <div class="inputBox">
-                        <span>address line 2</span>
+                        <span>address line 2</span>&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. street name" name="street" required>
                     </div>
                     <div class="inputBox">
-                        <span>City</span>
+                        <span>City</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. mumbai" name="city" required>
                     </div>
 
@@ -71,21 +72,22 @@
                 
                 <div class="subinputtype">
                 <div class="inputBox">
-                        <span>State</span>
+                        <span>State</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. maharashtra" name="state" required>
                     </div>
                     <div class="inputBox">
-                        <span>Country</span>
+                        <span>Country</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. india" name="country" required>
                     </div>
                     <div class="inputBox">
-                        <span>Pin Code</span>
+                        <span>Pin Code</span>&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. 123456" name="pin_code" required>
                     </div>
                 </div>
-            </div>
+                </div>
+                    
             <div class="payment">
-                        <span>payment method :</span>
+            <h1 class="heading">PAYMENT</h1>
                         <div class="delivery_payment">
                         <span>payment method : &nbsp;</span>
                         <select name="method" class="method">
