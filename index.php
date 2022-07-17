@@ -1,4 +1,4 @@
-<?php include('partials-front/menu.php') ?>
+<?php include('partials-front/menu.php'); ?>
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
@@ -18,7 +18,14 @@
             echo $_SESSION['order'];
             unset($_SESSION['order']);
         }
+
+        if(isset($_SESSION['already-added'])) {
+            echo $_SESSION['already-added'];
+            unset($_SESSION['already-added']);
+        }
     ?>
+
+    
 
     <!-- CAtegories Section Starts Here -->
     <section class="categories">
@@ -99,10 +106,12 @@
                         // $featured = $row2['featured'];
                         if($i%2==0) {
                             ?>
+                            <form action="addtocart.php" method="POST" enctype="multipart/form-data">
                                 <div class="food-menu-box" data-aos="fade-left">
                             <?php
                         } else {
                             ?>
+                            <form action="addtocart.php" method="POST" enctype="multipart/form-data">
                                 <div class="food-menu-box" data-aos="fade-right">
                             <?php
                         }
@@ -115,6 +124,7 @@
                                 } else {
                                     ?>
                                     <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name2; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve fixed">
+                                    <input type="hidden" name="imageName" value="<?php echo $image_name2; ?>">
                                     <?php
                                 }
                                 ?>
@@ -122,15 +132,21 @@
 
                             <div class="food-menu-desc" >
                                 <h4 style="font-size: 30px;"><?php echo $title2; ?></h4>
+                                <input type="hidden" name="title1" value="<?php echo $title2; ?>">
                                 <p class="food-price">₹<?php echo $price; ?></p>
+                                <input type="hidden" name="price1" value="<?php echo $price; ?>">
                                 <p class="food-detail text-truncate">
                                 <?php echo $description; ?>
                                 </p>
                                 <br>
 
                                 <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id2; ?>" class="btn btn-primary">Order Now</a>
+                                <!-- <input type="number" class="quentityInput" name="quentity" min="1" max="100"> -->
+                                <input type="hidden" name="food_id" value="<?php echo $id2; ?>">
+                                <button type="submit" name="submit1" class="btn btn-primary">Add to Cart</button>
                             </div>
                         </div>
+                        </form>
                         <?php
                         $i++;
                     }

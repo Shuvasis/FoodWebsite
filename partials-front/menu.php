@@ -23,7 +23,7 @@
     <section class="navbar" >
         <div class="container">
             <div class="logo">
-                <a href="#" title="Logo">
+                <a href="<?php echo SITEURL; ?>" title="Logo">
                 <img src="images/newlogo.png" alt="Restaurant Logo" class="img-responsiveOne">
                     
                 </a>
@@ -43,10 +43,23 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
-                    <li><a href="user-login.php" class="logout">Log In</a></li>
                     <li>
-                        <a href="user-logout.php" class="logout">Log out</a>
+                        <a href="<?php echo SITEURL; ?>cart.php">Cart</a>
                     </li>
+                    <?php
+                        if(isset($_SESSION['loginuser'])) {
+                            ?>
+                                <li>
+                                    <a href="user-logout.php" class="logout">Log out</a>
+                                </li>
+                                <?php
+                        } else {
+                            ?>
+                                <li><a href="user-login.php" class="logout">Log In</a></li>
+                            <?php
+                        }
+                    ?>
+                    
                 </ul>
             </div>
 
