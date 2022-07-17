@@ -6,8 +6,13 @@
         if(isset($_POST['checkout'])) {
             ?>
             <section class="checkout-form">
+                <div class="checkoutDiv">
+                 <h1 class="heading">CHECKOUT</h1>
 
-                <h1 class="heading">complete your order</h1>
+                </div>
+
+              
+
 
                 <form action="" method="post">
 
@@ -22,37 +27,33 @@
                         $total_price = number_format($fetch_cart['product_price'] * $fetch_cart['product_quentity']);
                         $grand_total = $total += $total_price;
                 ?>
-                <span><?= $fetch_cart['product_name']; ?>(<?= $fetch_cart['product_quentity']; ?>)</span>
+                <span class="displayorder"><?= $fetch_cart['product_name']; ?>(<?= $fetch_cart['product_quentity']; ?>)</span>
                 <?php
                     }
                 }else{
                     echo "<div class='display-order'><span>your cart is empty!</span></div>";
                 }
                 ?>
-                <span class="grand-total"> grand total : $<?= $grand_total; ?>/- </span>
+                <span class="grand-total"> Price : <?= $grand_total ; ?>/- </span>
                 </div>
 
                 <div class="flex">
+                <h1 class="heading">BILLING ADDRESS</h1>
+                <div class="subinputtype">
                     <div class="inputBox">
-                        <span>your name</span>
+                        <span>Name</span>
                         <input type="text" placeholder="enter your name" name="name" required>
                     </div>
                     <div class="inputBox">
-                        <span>your number</span>
+                        <span>Phone Number</span>
                         <input type="number" placeholder="enter your number" name="number" required>
                     </div>
                     <div class="inputBox">
-                        <span>your email</span>
+                        <span>your Email</span>
                         <input type="email" placeholder="enter your email" name="email" required>
                     </div>
-                    <div class="inputBox">
-                        <span>payment method</span>
-                        <select name="method">
-                            <option value="cash on delivery" selected>cash on devlivery</option>
-                            <option value="credit cart">credit cart</option>
-                            <option value="paypal">paypal</option>
-                        </select>
-                    </div>
+                </div>
+                <div class="subinputtype">
                     <div class="inputBox">
                         <span>address line 1</span>
                         <input type="text" placeholder="e.g. flat no." name="flat" required>
@@ -62,23 +63,42 @@
                         <input type="text" placeholder="e.g. street name" name="street" required>
                     </div>
                     <div class="inputBox">
-                        <span>city</span>
+                        <span>City</span>
                         <input type="text" placeholder="e.g. mumbai" name="city" required>
                     </div>
-                    <div class="inputBox">
-                        <span>state</span>
+
+                </div>   
+                
+                <div class="subinputtype">
+                <div class="inputBox">
+                        <span>State</span>
                         <input type="text" placeholder="e.g. maharashtra" name="state" required>
                     </div>
                     <div class="inputBox">
-                        <span>country</span>
+                        <span>Country</span>
                         <input type="text" placeholder="e.g. india" name="country" required>
                     </div>
                     <div class="inputBox">
-                        <span>pin code</span>
+                        <span>Pin Code</span>
                         <input type="text" placeholder="e.g. 123456" name="pin_code" required>
                     </div>
                 </div>
-                <input type="submit" value="order now" name="order_btn" class="btn order-btn">
+            </div>
+            <div class="payment">
+                        <span>payment method :</span>
+                        <div class="delivery_payment">
+                        <span>payment method : &nbsp;</span>
+                        <select name="method" class="method">
+                           <option value=""selected="true" disabled="disabled"> --Select--</option>
+                            <option value="cash on delivery" >cash on devlivery</option>
+                            
+                        </select>
+
+            </div>
+            </div>
+
+
+                <input type="submit" value="Continue to checkout" name="order_btn" class="btn order-btn">
                 </form>
 
             </section>
@@ -143,8 +163,10 @@
             
             ?>
             <section class="checkout-form">
+            <div class="checkoutDiv">
+                 <h1 class="heading">CHECKOUT</h1>
 
-                <h1 class="heading">complete your order</h1>
+                </div>
 
                 <form action="" method="post">
                 <input type="hidden" name="food_id" value="<?php echo $food_id; ?>">
@@ -158,62 +180,80 @@
                         $title = $row_cart['title'];
                         $grand_total = $row_cart['price'];
                 ?>
-                <span><?= $row_cart['title']; ?></span>
+                <span  class="displayorder"><?= $row_cart['title']; ?></span>
                 <?php
                 }else{
                     echo "<div class='display-order'><span>your cart is empty!</span></div>";
                 }
                 ?>
-                <span class="grand-total"> grand total : <?= $grand_total; ?>/- </span>
+                <span class="grand-total"> Price : <?= $grand_total; ?>/- </span>
                 </div>
 
                 <div class="flex">
+                <h1 class="heading">BILLING ADDRESS</h1>
+                <div class="subinputtype">
                     <div class="inputBox">
-                        <span>your name</span>
+                        <span>Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="enter your name" name="name" required>
                     </div>
                     <div class="inputBox">
-                        <span>your number</span>
+                        <span>Phone Number</span>&nbsp;
                         <input type="number" placeholder="enter your number" name="number" required>
                     </div>
                     <div class="inputBox">
-                        <span>your email</span>
+                        <span>your Email</span>&nbsp;
                         <input type="email" placeholder="enter your email" name="email" required>
                     </div>
+                </div>
+                <div class="subinputtype">
                     <div class="inputBox">
-                        <span>payment method</span>
-                        <select name="method">
-                            <option value="cash on delivery" selected>cash on devlivery</option>
-                            <option value="credit cart">credit cart</option>
-                            <option value="paypal">paypal</option>
-                        </select>
-                    </div>
-                    <div class="inputBox">
-                        <span>address line 1</span>
+                        <span>address line 1</span>&nbsp;
                         <input type="text" placeholder="e.g. flat no." name="flat" required>
                     </div>
                     <div class="inputBox">
-                        <span>address line 2</span>
+                        <span>address line 2</span>&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. street name" name="street" required>
                     </div>
                     <div class="inputBox">
-                        <span>city</span>
+                        <span>City</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. mumbai" name="city" required>
                     </div>
-                    <div class="inputBox">
-                        <span>state</span>
+
+                </div>   
+                
+                <div class="subinputtype">
+                <div class="inputBox">
+                        <span>State</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. maharashtra" name="state" required>
                     </div>
                     <div class="inputBox">
-                        <span>country</span>
+                        <span>Country</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. india" name="country" required>
                     </div>
                     <div class="inputBox">
-                        <span>pin code</span>
+                        <span>Pin Code</span>&nbsp;&nbsp;&nbsp;
                         <input type="text" placeholder="e.g. 123456" name="pin_code" required>
                     </div>
                 </div>
-                <input type="submit" value="order now" name="single_order_btn" class="btn order-btn">
+                    
+                    
+                   
+                   
+            </div>
+            <div class="payment">
+            <h1 class="heading">PAYMENT</h1>
+            <div class="delivery_payment">
+                <span>payment method : &nbsp;</span>
+                        <select name="method" class="method">
+                           <option value=""selected="true" disabled="disabled"> --Select--</option>
+                            <option value="cash on delivery" >cash on devlivery</option>
+                            
+                        </select>
+
+            </div>
+                       
+            </div>
+                <input type="submit" value="Continue to checkout" name="single_order_btn" class="btn order-btn">
                 </form>
 
             </section>
