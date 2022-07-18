@@ -19,7 +19,7 @@
     <!-- footer Section Starts Here -->
     <section class="footer">
         <div class="container text-center">
-            <p>All rights reserved. Designed By <a href="#">Abhijit Biswas, Jhilik Maji, Shuvasis Manna, Dhiren Ghosh</a></p>
+            <p>All rights reserved. Designed By <a href="#">Jhilik Maji, Shuvasis Manna, Dhiren Ghosh</a></p>
         </div>
     </section>
     <!-- footer Section Ends Here -->

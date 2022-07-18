@@ -16,7 +16,7 @@
         <div class="main-content">
         <div class="wrapper">
                 <h1>DASHBOARD</h1><br><br>
-                <div class="col-4 text-center">
+                <div class="col-4 text-center" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <?php 
                         $sql = "SELECT * FROM category";
                         $res = mysqli_query($conn, $sql);
@@ -27,7 +27,7 @@
                     Category
                 </div>
 
-                <div class="col-4 text-center">
+                <div class="col-4 text-center" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <?php 
                         $sql2 = "SELECT * FROM food";
                         $res2 = mysqli_query($conn, $sql2);
@@ -38,7 +38,7 @@
                     Foods
                 </div>
 
-                <div class="col-4 text-center">
+                <div class="col-4 text-center" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <?php 
                         $sql3 = "SELECT * FROM `order`";
                         $res3 = mysqli_query($conn, $sql3);
@@ -49,7 +49,7 @@
                     Total Orders
                 </div>
 
-                <div class="col-4 text-center">
+                <div class="col-4 text-center" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
                     <?php
                         $sql4 = "SELECT SUM(total_price) AS Total FROM `order` WHERE status = 'Delivered'";
                         $res4 = mysqli_query($conn, $sql4);
