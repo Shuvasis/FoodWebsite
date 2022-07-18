@@ -34,7 +34,7 @@
         if($cart_query && $detail_query && $delete_cart){
             
             ?>
-                <table cellpadding="0" cellspacing="0" width="100%" style="max-width:600px; margin-left: auto; margin-right: auto;">
+                <table cellpadding="0" cellspacing="0" width="100%" style="max-width:600px; margin-left: auto; margin-right: auto; margin-top: 1rem;">
             
                     <tr>
                         <td style="padding: 35px 35px 20px 35px; background-color: #ffffff;">
