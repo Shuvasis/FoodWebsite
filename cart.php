@@ -78,7 +78,7 @@ if(isset($_SESSION['loginuser']))
                                             <td>₹<?php echo $sub_total = number_format($row['product_price'] * $row['product_quentity']); ?></td>
                                             <form action="removeCart.php" method="POST">
                                                 <input type="hidden" name="delete_id" value="<?php echo $product_id; ?>">
-                                                <td><button type="submit" name="submit" class="btn btn-primary">Remove</button></td>
+                                                <td><button type="submit" name="submit" class="remove_button">Remove</button></td>
         
                                                 
                                             </form>
@@ -90,14 +90,14 @@ if(isset($_SESSION['loginuser']))
 
                         ?>
         
-                        <tr>
-                            <td>Total Price: </td>
+                        <tr class="total_price">
+                            <td>Total Price: ₹</td>
                             <td><?php echo $grand_total; ?></td>
                         </tr>
                     </table>
                     <form action="order.php" method="POST">
                         <input type="hidden" name="total" value="<?php echo $grand_total; ?>">
-                        <button type="submit" name="checkout" class="btn-primary" style="float: right;">Checkout</button>
+                        <button type="submit" name="checkout" class="button_checkout">CHECKOUT</button>
                     </form>
                 </div>
             </div>

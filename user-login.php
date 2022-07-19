@@ -26,7 +26,7 @@
                         </div>
                     
                         <div class="input_box">
-                            <input type="submit" name="submit" value="Proceed">
+                            <input type="submit" name="submit" value="Proceed" style="cursor: pointer;">
                         </div>   
                     </form>
                     <div style="font-size: 20px; color:white; ">
