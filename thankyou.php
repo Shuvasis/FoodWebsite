@@ -41,7 +41,7 @@
                         <table cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                             <tr>
                                 <td style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;">
-                                    <img src="https://img.icons8.com/carbon-copy/100/000000/checked-checkbox.png" width="125" height="120" style="display: block; border: 0px; margin-left: auto; margin-right: auto;" /><br>
+                                    <img src="https://www.kareoptions.com/assets/img/tenor.gif" width="125" height="120" style="display: block; border: 0px; margin-left: auto; margin-right: auto;" /><br>
                                     <h2 style="font-size: 30px; font-weight: 800; line-height: 36px; color: #333333; margin: 0; text-align: center;">
                                         Thank You For Your Order!
                                     </h2>
@@ -177,14 +177,14 @@
         if($get_cart && $single_order_query){
             
             ?>
-                <table cellpadding="0" cellspacing="0" width="100%" style="max-width:600px; margin-left: auto; margin-right: auto;">
+                <table cellpadding="0" cellspacing="0" width="100%" style="max-width:600px; margin-left: auto; margin-right: auto; margin-top: 1rem;">
             
                     <tr>
                         <td style="padding: 35px 35px 20px 35px; background-color: #ffffff;">
                         <table cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                             <tr>
                                 <td style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;">
-                                    <img src="https://img.icons8.com/carbon-copy/100/000000/checked-checkbox.png" width="125" height="120" style="display: block; border: 0px; margin-left: auto; margin-right: auto;" /><br>
+                                    <img src="https://www.kareoptions.com/assets/img/tenor.gif" width="125" height="120" style="display: block; border: 0px; margin-left: auto; margin-right: auto;" /><br>
                                     <h2 style="font-size: 30px; font-weight: 800; line-height: 36px; color: #333333; margin: 0; text-align: center;">
                                         Thank You For Your Order!
                                     </h2>

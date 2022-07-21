@@ -91,55 +91,60 @@
                 <div class="flex">
                     <div class="subinputtype">
                         <div class="inputBox">
-                            <span>your name</span>
+                            <span>Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input type="text" placeholder="enter your name" name="name" required>
                         </div>
                         <div class="inputBox">
-                            <span>your number</span>
+                            <span>Phone Number</span>&nbsp;
                             <input type="number" placeholder="enter your number" name="number" required>
                         </div>
                         <div class="inputBox">
-                            <span>your email</span>
+                            <span>Your Email</span>&nbsp;
                             <input type="email" placeholder="enter your email" name="email" required>
                         </div>
                     </div>
                     <div class="subinputtype">
                         <div class="inputBox">
-                            <span>address line 1</span>
+                            <span>Address Line 1</span>&nbsp;
                             <input type="text" placeholder="e.g. flat no." name="flat" required>
                         </div>
                         <div class="inputBox">
-                            <span>address line 2</span>
+                            <span>Address Line 2</span>&nbsp;
                             <input type="text" placeholder="e.g. street name" name="street" required>
                         </div>
                         <div class="inputBox">
-                            <span>city</span>
+                            <span>City</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input type="text" placeholder="e.g. mumbai" name="city" required>
                         </div>
                     </div>
                     <div class="subinputtype">
                         <div class="inputBox">
-                            <span>state</span>
+                            <span>State</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input type="text" placeholder="e.g. maharashtra" name="state" required>
                         </div>
                         <div class="inputBox">
-                            <span>country</span>
+                            <span>Country</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input type="text" placeholder="e.g. india" name="country" required>
                         </div>
                         <div class="inputBox">
-                            <span>pin code</span>
+                            <span>Pin Code</span>&nbsp;&nbsp;&nbsp;
                             <input type="text" placeholder="e.g. 123456" name="pin_code" required>
                         </div>
                     </div>
-                    <div class="payment">
-                        <div class="inputBox">
-                            <span>payment method</span>
-                            <select name="method" class="method">
-                                <option value="cash on delivery" selected>cash on devlivery</option>
-                                <option value="credit cart">credit cart</option>
-                                <option value="paypal">paypal</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="payment">
+                <h1 class="heading">PAYMENT</h1>
+                    <div class="delivery_payment">
+                        <span>Payment Method</span>&nbsp;
+                        <!-- <select name="method" class="method">
+                            <option value="cash on delivery" selected>cash on devlivery</option>
+                            <option value="credit cart">credit cart</option>
+                            <option value="paypal">paypal</option>
+                        </select> -->
+                        <select name="method" class="method">
+                            <option value=""selected="true" disabled="disabled"> --Select--</option>
+                            <option value="cash on delivery" >cash on devlivery</option>
+                        </select>
                     </div>
                 </div>
                 <input type="submit" value="Continue to checkout" name="single_order_btn" class="btn order-btn">
