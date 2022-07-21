@@ -126,7 +126,7 @@
                                 <select name="category">
                                     <!-- display php code from database -->
                                     <?php
-                                        $sql="SELECT * FROM category WHERE active='yes'";
+                                        $sql="SELECT * FROM category WHERE active='Yes'";
                                         $res = mysqli_query($conn, $sql);
                                         $count=mysqli_num_rows($res);
                                         if($count>0){
@@ -153,16 +153,16 @@
                         <tr>
                             <td>Featured: </td>
                             <td>
-                                <input type="radio" value="yes" name="featured" >Yes
-                                <input type="radio" value="no" name="featured" >No
+                                <input type="radio" value="Yes" name="featured" >Yes
+                                <input type="radio" value="No" name="featured" >No
                             </td>
                         </tr>
 
                         <tr>
                             <td>Active: </td>
                             <td>
-                                <input type="radio" value="yes" name="active" >Yes
-                                <input type="radio" value="no" name="active" >No
+                                <input type="radio" value="Yes" name="active" >Yes
+                                <input type="radio" value="No" name="active" >No
                             </td>
                         </tr>
 
