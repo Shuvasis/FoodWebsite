@@ -83,7 +83,7 @@
                                         <input type="hidden" name="title1" value="<?php echo $title; ?>">
                                         <p class="food-price">₹<?php echo $price; ?></p>
                                         <input type="hidden" name="price1" value="<?php echo $price; ?>">
-                                        <p class="food-detail">
+                                        <p class="text-truncate">
                                             <?php echo $description; ?>
                                         </p>
                                         <br>
